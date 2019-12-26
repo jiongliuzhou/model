@@ -1,0 +1,49 @@
+#配置启动端口
+server:
+  port: 8081
+  servlet:
+    context-path: /model
+
+#mybatis日志配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#数据源配置
+spring:
+  #数据源配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.100.50.94:1521:orcl
+    username: jsdwjsxm
+    password: dse123
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 1000
+
+#自定义数据源
+custom:
+  datasource:
+    names: sqlServer,mysql
+    sqlServer:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://10.100.50.73:1433;databaseName=COLLECTOR
+      username: COLLECTOR
+      password: 123456
+    mysql:
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/lz?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+          username: root
+          password: root
+#日志配置
+logging:
+  level:
+    com.lz: debug
+    org.springfromework: debug
+  #file: /home/dongshen/slfx/app/logs/app.log
+
