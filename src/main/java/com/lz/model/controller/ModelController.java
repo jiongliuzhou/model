@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 /**
  * @author DELL
@@ -30,7 +31,7 @@ public class ModelController {
      * @return
      */
     @RequestMapping("/doTrans")
-    public Object doTrans(DataBaseRequest request){
+    public Object doTrans(@Valid DataBaseRequest request){
         //数据库名称
         if(StringUtils.isEmpty(request.getDatabaseType())){
             request.setDatabaseType(ConfigUtil.DATABASE_TYPE);
