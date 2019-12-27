@@ -17,9 +17,7 @@ public class BeanUtil {
      * @return
      */
     public static String getMethodName(String name,String separator){
-        String fieldName = getFieldName(name,separator);
-        String upper= String.valueOf(fieldName.charAt(0)).toUpperCase();
-        return "get"+upper+fieldName.substring(1);
+        return "get"+getUpperName(name,separator);
     }
 
     /**
@@ -28,9 +26,7 @@ public class BeanUtil {
      * @return
      */
     public static String setMethodName(String name,String separator){
-        String fieldName = getFieldName(name,separator);
-        String upper= String.valueOf(fieldName.charAt(0)).toUpperCase();
-        return "set"+upper+fieldName.substring(1);
+        return "set"+getUpperName(name,separator);
     }
 
     /**

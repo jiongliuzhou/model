@@ -35,7 +35,7 @@ public class MysqlProvider implements JdbcProvider{
     @Override
     public String getTableColumns(@Param("databaseName") String databaseName, @Param("tableName") String tableName) {
         SQL sql=new SQL();
-        sql.SELECT("name columnName");
+        sql.SELECT("column_name columnName");
         sql.SELECT("DATA_TYPE dataType");
         sql.FROM("information_schema.COLUMNS");
         sql.WHERE("table_name = #{tableName}");
