@@ -23,7 +23,7 @@
         <snakeyaml.version>1.23</snakeyaml.version>
         <ojdbc6.version>11.2.0.3</ojdbc6.version>
         <sqlServer.version>6.2.0.jre8</sqlServer.version>
-        <mysql.version>8.0.13</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
     </properties>
 
     <dependencies>
